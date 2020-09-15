@@ -1,0 +1,58 @@
+  491  cd Desktop/
+  492  ls
+  493  cd assassinato-na-linha-de-comando/
+  494  ls
+  495  cd inicio
+  496  history
+  497  cd Desktop
+  498  ls
+  499  cd assassinato-na-linha-de-comando/
+  500  cd Desktop/
+  501  ls
+  502  cd assassinato-na-linha-de-comando/
+  503  ls
+  504  cat inicio
+  505  cd misterio/
+  506  ls
+  507  cat cena-do-crime
+  508  grep "PISTA" cena-do-crime
+  509  ls
+  510  cat pessoas
+  511  grep "Annabel" pessoas
+  512  ls
+  513  cd ruas/
+  514  ls
+  515  cat Vila_Hart
+  516  cat Vila_Buckingham
+  517  cd ../
+  518  ls
+  519  cd entrevistas/
+  520  cat entrevista-4724
+  521  cat entrevista-47246024
+  522  cat entrevista-699607
+  523  cd ../
+  524  ls
+  525  grep -A 6 "Placa L337" automoveis
+  526  ls
+  527  cd associacoes/
+  528  grep "Joe Germuska" AAA
+  529  grep "Joe Germuska" Delta_SkyMiles
+  530  grep "Joe Germuska" Biblioteca_da_Cidade
+  531  grep "Joe Germuska" Museu_da_História_do_Bash
+  532  grep "Jeremy Bowers" Museu_da_História_do_Bash
+  533  grep "Jeremy Bowers" Biblioteca_da_Cidade
+  534  grep "Jeremy Bowers" Delta_SkyMiles
+  535  grep "Jeremy Bowers" AAA
+  536  grep "Jacqui Maher" AAA
+  537  grep "Jacqui Maher" Delta_SkyMiles
+  538  grep "Jacqui Maher" Biblioteca_da_Cidade
+  539  grep "Jacqui Maher" Museu_da_História_do_Bash
+  540  history
+
+Pelo que pude observar o suspeito primário seria o Jeremy Bowers, pois segundo as câmeras de segurança seria um homem com a altura em torno de 1,83m e é o que mais se aproxima em questão de altura e nas outras descrições dadas pela testemunha principal, Annabel Church.
+Placa L3375A9
+Marca: Honda
+Cor: Azul
+Proprietário: Jeremy Bowers 
+Altura: 1,86 m 
+Peso: 92,5 kg

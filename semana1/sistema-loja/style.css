@@ -33,7 +33,6 @@ body {
 .nav-bar a:hover {
     background-color: #F78733;
     color: white;
-    margin: 80px;
 }
 
 #message {
@@ -44,9 +43,11 @@ body {
 
 #above-footer {
     text-align: left;
-    margin: 100px;
-    padding: 150px;
     font-size: 18px;
+    float: left;
+    display: fixed;
+    margin: auto;
+    padding: 100px 0;
 }
 
 .social-media * {
@@ -54,6 +55,7 @@ body {
     max-height: 150px;
     width: 35px;
     height: 35px;
+    padding: 1px;
 }
 
 footer {
@@ -62,3 +64,24 @@ footer {
     position: fixed;
     display: block;
 }
+
+#store-name {
+    font-family: 'Grandstander', cursive;
+    font-size: 55px;
+    text-align: center;
+}
+
+.funcionarios {
+    text-align: justify;
+    padding: 35px;
+}
+
+.product-table {
+
+}
+
+.product-image {
+    width: 200px;
+    height: 200px;    
+}
+

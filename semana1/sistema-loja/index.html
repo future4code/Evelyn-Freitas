@@ -1,36 +1,54 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Grandstander&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,300&display=swap" rel="stylesheet">
+    
     <title>Catnip Store</title>
+
 </head>
 <body>
     <div>
-        <h1>Bem-vind@ a <em>Catnip Store</em>!</h1>
-        <p>Para todos os amantes de gatos do Brasil</p>
-    </div>
+        <header>
 
-    <div>
-        <a href="index.html">Página Inicial</a>
-        <a href="ctrl-estoque.html">Controle de Estoque</a>
-        <a href="add-produto.html">Adicionar Produto</a>
-        <a href="funcionarios.html">Funcionários</a>
-    </div>
-
-    <div>
-        <p>Está é uma loja para você gateir@ de carteirinha ou mesmo você que está iniciando sua família de gatinhos, afinal 1 gatinh@ nunca vai ser suficiente, não é mesmo?! Temos o prazer de apresentar produtos da mais alta qualidade para seu gatinh@!</p>
-    </div>
-
-    <div>
-        <p>Siga-nos nas redes sociais!</p>
-
-        <div>
-            <img src="https://image.flaticon.com/icons/png/512/25/25305.png"/>
-            <img src="https://image.flaticon.com/icons/png/512/25/25425.png"/>
-            <img src="https://image.flaticon.com/icons/png/512/8/8800.png"/>
+            <h1 id="welcome-message">Bem-vind@ a <em>Catnip Store</em>!</h1>
+            <p id="calling-message">Para tod@s os amantes de gat@s do Brasil</p>
+        
         </div>
+    
+        <div class="nav-bar">
+            <nav> 
+                <a href="index.html">Home</a>
+                <a href="ctrl-estoque.html">Controle de Estoque</a>
+                <a href="add-produto.html">Adicionar Produto</a>
+                <a href="funcionarios.html">Funcionários</a>
+            </nav>
+        </div>
+    
+        <div>
+            <p id="message">Está é uma loja para você gateir@ de carteirinha ou mesmo você que está iniciando sua família de gatinhos, afinal 1 gatinh@ nunca vai ser suficiente, não é mesmo?! Temos o prazer de apresentar produtos da mais alta qualidade para seu gatinh@!</p>
+        </div>
+
+        </header>
+
+    <div>
+        <!-- Criei esta id para que pudesse separar melhor no css o "chamado" para as redes sociais dos links para as redes em si -->
+        <p id="above-footer">Siga-nos nas redes sociais!</p>
+    </div>
+        
+        <footer>
+            <div class="social-media">
+               <a href="http://www.facebook.com.br"><img src="img/facebook-icon.png" alt="ícone do facebook"/></a>
+                <a href="http://www.intagram.com"><img src="img/intagram-icon.png" alt="ícone do instagram"/></a>
+                <a href="https://twitter.com"><img src="img/twitter-icon.png" alt="ícone do twitter"/></a>
+            </div>
+        </footer>    
+
     </div>
 </body>
 </html>

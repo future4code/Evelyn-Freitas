@@ -1,0 +1,87 @@
+@charset "UTF-8";
+
+body {
+    font-family: 'Nunito', cursive;
+    color: white;
+    background-color: #4ABCAD;
+}
+
+#welcome-message {
+    font-family: 'Grandstander', cursive;
+    font-size: 70px;
+    text-align: center;
+    position: relative;
+    display: block;
+    margin: 25px;
+}
+
+#calling-message {
+    font-family: 'Nunito', sans-serif;
+    text-align: center;
+    font-size: 20px;
+}
+
+.nav-bar * {
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+    margin: 40px;
+    padding: 25px;
+    background-color: #DFDCE3;
+}
+
+.nav-bar a:hover {
+    background-color: #F78733;
+    color: white;
+}
+
+#message {
+    margin: 50px;
+    font-size: 20px;
+    text-align: center;
+}
+
+#above-footer {
+    text-align: left;
+    font-size: 18px;
+    float: left;
+    display: fixed;
+    margin: auto;
+    padding: 100px 0;
+}
+
+.social-media * {
+    max-width: 250px;
+    max-height: 150px;
+    width: 35px;
+    height: 35px;
+    padding: 1px;
+}
+
+footer {
+    bottom: 0;
+    height: 40px;
+    position: fixed;
+    display: block;
+}
+
+#store-name {
+    font-family: 'Grandstander', cursive;
+    font-size: 55px;
+    text-align: center;
+}
+
+.funcionarios {
+    text-align: justify;
+    padding: 35px;
+}
+
+.product-table {
+
+}
+
+.product-image {
+    width: 200px;
+    height: 200px;    
+}
+

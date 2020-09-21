@@ -1,0 +1,85 @@
+@charset "UTF-8";
+
+body {
+	font-family: 'Alata', sans-serif;
+  	background-color: #A8BAFA;
+}
+
+h1 {
+	color: white; 
+	text-align: center;
+	margin-top: 180px;
+	display: block;
+}
+
+img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+nav div ul li {
+	list-style-type: none;
+}
+
+.navbar {
+	background-color: #F47D1F;
+	font-size: 18px;
+	position: fixed;
+	top: 0;
+	right: 0.5%;
+	left: 0;
+	width: 100%;	
+}
+
+.navbar a {
+	float: right;
+  	display: block;
+  	color: white;
+  	text-align: right;
+  	padding: 13px 16px;
+  	text-decoration: none
+}
+
+.navbar a:hover {
+	background: #A8BAFA;
+	color: white;
+}
+	
+.abovefooter {
+	font-family: 'Alata', sans-serif;
+	font-size: 18px;
+	font-style: italic;	
+	text-align: right;
+	margin-left: 150px;
+	margin-top: 40px;
+}
+
+.footer {
+	background: slateblue;
+	position: absolute;
+	right: 0.5%;
+	left: 0;
+	height: 100px;
+	width: 100%;
+}
+
+form input {
+	height: 50px;
+	width: 300px;
+	margin-top: 25px;
+	margin-left: 500px;
+	font-family: 'Alata', sans-serif;
+	font-size: 18px;
+	text-align: center;
+	border-style: inset;
+}
+
+button {
+	width: 100px;
+	height: 50px;
+	font-family: 'Alata', sans-serif;
+	font-size: 18px;
+	text-align: center;
+	background: #A8BAFA;
+}

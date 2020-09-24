@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+}    
+
+html {
+    height: 100vh;
+    width: 100vw;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    font-family: 'Varela Round', 'Josefin Sans', sans-serif;
+    background-color: #0B2239;
+}
+
+section images {
+    display: grid;
+    grid-template-columns: repeat(11);
+    gri
+
+}
+   
+.logo-img {
+    margin-right: 10px;
+    height: 60px;
+    transform: scaleX(-1);
+}
+   
+.logo-text {
+    font-size: 2.6em;
+    color: #c3bab9;
+}
+   
+section img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+   
+.info1, .info2 {
+    padding: 40px;
+    background-color: #333;
+    color: white;
+}
+   
+h2 {
+    font-size: 2em;
+    margin-bottom: 1em;
+}
+   
+p {
+    margin-bottom: 1em;
+}
+   
+.info-link {
+    text-decoration: none;
+    color: #ff9900;
+}
+   
+
+nav ul {
+    list-style-type: none;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    width: 15vw;
+    height: 18vh;
+    background-color: #FFFF;
+    text-align: center;
+}
+  
+nav ul li a {
+    display: flex;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    background-color: #000411;
+    color: white;
+}
+
+footer {
+    width: 100%;
+    height: 12%;
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+footer p {
+    font-size: 3.5vh;
+}
+
+footer img {
+    ;
+}

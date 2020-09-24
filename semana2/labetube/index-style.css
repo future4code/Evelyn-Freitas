@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+}    
+
+html {
+    height: 100vh;
+    width: 100vw;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    font-family: 'Varela Round', 'Josefin Sans', sans-serif;
+    background-color: #0B2239;
+}
+
+header {
+    display: flex;
+    top: 0;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    margin: 15px;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+}
+
+nav ul {
+    list-style-type: none;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    width: 15vw;
+    height: 18vh;
+    background-color: #FFFF;
+    text-align: center;
+}
+  
+nav ul li a {
+    display: flex;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    background-color: #000411;
+    color: white;
+}
+
+main {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: start;
+    text-decoration-style: none;
+}
+
+header img {
+    margin: 10px;
+}
+
+header p {
+    color: #ffffff;
+    font-size: 5vw;
+    margin-right: 4vw;
+}
+
+header input {
+    border-color: #ffffff;
+    border-radius: 1vw;
+    margin-left: 1vw;
+    width: 18vw;
+    height: 7vh;
+    text-align: center;
+    font-size: 20px;
+}
+header button {
+    margin-left: 1vw;
+    width: 5vw;
+    height: 8vh;
+    border-radius: 1vw;
+}
+
+header button:hover {
+    background-color: cornflowerblue;
+}
+
+.search-infos {
+    display: flex;
+}
+
+footer {
+    width: 100%;
+    height: 12%;
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+footer p {
+    font-size: 3.5vh;
+}
+
+
+
+
+

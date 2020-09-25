@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #fc5c5c;
+    font-family: 'Lato', sans-serif;
+    
+}
+
+section {
+    width: 15%;
+    height: 20%;
+}
+
+section ul {
+    width: 100vw;
+    height: 30vh;
+    top: 0;
+    position: fixed;
+    background-color: #ffffff;
+    list-style: none;
+}
+
+section li {
+    float: right;
+    margin: 50px;
+    margin-top: 40px;
+    padding: 10px;
+    text-align: center;
+    font-size: 25px;
+}
+
+section ul li a {
+    text-decoration: none;
+    color: #fc5c5c;
+}
+
+section img {
+    width: 20vw;
+    height: 40vh;
+    margin-left: 10%;
+}

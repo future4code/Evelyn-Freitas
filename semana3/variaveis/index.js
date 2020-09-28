@@ -1,26 +1,26 @@
 /* Resolução do exercício de interpretação de código
 Resolução do 1°:
 
-a = 10
-b = 10
+a = 10;
+b = 10;
 
-console.log(b)
+console.log(b);
 Aqui o console exibe o valor de b -> 10
-b = 5
-console.log(a, b)
+b = 5;
+console.log(a, b);
 Aqui o console exibe o valor de a e b, após a mudança na variável b -> 10 5
 */
 
 /* Resolução do exercício de interpretação de código
 Resolução do 2°:
 
-a = 10
-b = 20 
-c = a -> Aqui o valor de c passa a ser o valor de a -> 10
-b = c -> Aqui o valor de b passa a ser o valor de c = a, ou seja -> 10
-a = b -> Aqui o valor de a passa a ser o valor de b que era 20 e passou a ser -> 10
+a = 10;
+b = 20;
+c = a; -> Aqui o valor de c passa a ser o valor de a -> 10
+b = c; -> Aqui o valor de b passa a ser o valor de c = a, ou seja -> 10
+a = b; -> Aqui o valor de a passa a ser o valor de b que era 20 e passou a ser -> 10
 
-console.log(a, b, c)
+console.log(a, b, c);
 Aqui o console apresenta -> 10 10 10
 
 */
@@ -89,6 +89,11 @@ console.log(arrayComidaFavorita[2]);
 console.log(arrayComidaFavorita[3]);
 console.log(arrayComidaFavorita[4]);
 
+let comidaFavorita = prompt("Qual a sua comida preferida?");
+console.log(comidaFavorita);
+arrayComidaFavorita = ["Frango a parmegiana", comidaFavorita, "Chocolate", "Cheesecake de Chocolate", "Torta Holandesa"];
+console.log(arrayComidaFavorita)
+
 /* Retorno do console:
 Essas são minhas comidas favoritas: 
 index.js:87 Frango a parmegiana
@@ -96,6 +101,8 @@ index.js:88 Batata Frita
 index.js:89 Chocolate
 index.js:90 Cheesecake de Chocolate
 index.js:91 Torta Holandesa
+oxinha
+index.js:95 (5) ["Frango a parmegiana", "Coxinha", "Chocolate", "Cheesecake de Chocolate", "Torta Holandesa"]
 */
 
 let arrayPerguntas = ["Você almoçou hoje?", "Você comeu chocolate hoje?", "Você assistiu a aula hoje?"];

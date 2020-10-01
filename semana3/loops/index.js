@@ -69,22 +69,29 @@ por isso não haveria possibilidade de aumentar o número.
 // }
 // console.log(novoArray);
 
-// d. 
-let arrayOriginal = String([2, 24, 38, 44, 50, 62, 33, 99, 75, 87]);
-let arrayStrings = [
-"O elemento do índex 0 é", 
-"O elemento do índex 1 é", 
-"O elemento do índex 2 é", 
-"O elemento do índex 3 é", 
-"O elemento do índex 4 é", 
-"O elemento do índex 5 é", 
-"O elemento do índex 6 é", 
-"O elemento do índex 7 é", 
-"O elemento do índex 8 é", 
-"O elemento do índex 9 é"
-]
+// // d. 
+// let arrayOriginal = [2, 24, 38, 44, 50, 62, 33, 99, 75, 87];
+// let i = 0;
+// let string = "";
 
-for (let soma of arrayOriginal) {
-    soma = arrayStrings + " " + arrayOriginal;
+// for (let numero of arrayOriginal) {
+//     string = "O elemento do index " + i + " é " + numero; 
+//     i++;
+//     console.log(string);
+// }
+
+// e.
+
+let arrayOriginal = [2, 24, 38, 44, 50, 62, 33, 99, 75, 87];
+let maiorNumero = arrayOriginal [0];
+let menorNumero = arrayOriginal [0];
+
+for (let i = 0; i < arrayOriginal.length; i++) {
+    let elemento = arrayOriginal[i];
+    if (maiorNumero > elemento) {
+        maiorNumero = elemento;
+    } else if (menorNumero < elemento) {
+        menorNumero = elemento;
+    }
 }
-console.log(soma);
+console.log("O maior número é " + maiorNumero + " e o menor número é " + menorNumero);

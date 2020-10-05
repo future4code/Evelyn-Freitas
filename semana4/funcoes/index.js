@@ -102,12 +102,69 @@
 // const resultado = funcaoReceber(50, 175);
 // console.log(resultado);
 
+// c.  
+// let funcaoMensagem = (mensagem) => {
+//     for (let i = 0; i <= 10; i++) {
+//         console.log(mensagem);
+//     }
+// }
+// const mensagem = funcaoMensagem("Minha namorada é linda <3");
+
+
+//Exercícios de escrita de código - Resolução do 6°
+
+// a.
+// let tamanhoArray = (array) => {
+//     for (let i = 0; i < array.length; i++) {
+//         console.log(array[i]);
+//         return array.length 
+//     }
+// }
+
+// tamanhoArray([10, 23, 45, 78, 90, 52, 35, 67, 84, 22]);
+
+// b.
+// const array = [10, 23, 45, 78, 90, 52, 35, 67, 84, 22]; 
+// let valorArray = (array) => {
+//     if (array % 2 === 0) {
+//         return true;
+//     } else {
+//         return false;
+//     }
+// }
+// let resultado = valorArray(array);
+// console.log(resultado); 
+
 // c. 
-const mensagem = "Minha namorada é linda <3";
-let funcaoMensagem = (mensagem) => {
-    for (let i = 0; i <= 10; i++) {
-        console.log(mensagem);
-    }
-}
+// const array = [10, 23, 45, 78, 90, 52, 35, 67, 84, 22]; 
+// let paridadeArray = (array) => {
+//     let numerosPares = [];
+//     for (let i = 0; i < array.length; i++) {
+//         if (array[i] % 2 === 0) {
+//             numerosPares.push(array[i]);
+//         }
+//     }
+//     return numerosPares.length
+// }
 
+// let resolucao = paridadeArray(array);
+// console.log(resolucao);
 
+// d. 
+// const array = [10, 23, 45, 78, 90, 52, 35, 67, 84, 22]; 
+// let arrayBoleanoParidade = (array) => {
+//     let numerosPares = [];
+//     for (let i = 0; i < array.length; i++) {
+//         if (array[i] % 2 === 0) {
+//             numerosPares.push(array[i]);
+//             return true;
+//         } else {
+//             numerosPares.push(array[i]);
+//             return false;
+//         }
+//     }
+//     return numerosPares.length;
+// }
+
+// let resolucao = arrayBoleanoParidade(array);
+// console.log(resolucao);

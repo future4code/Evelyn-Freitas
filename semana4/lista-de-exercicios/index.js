@@ -114,3 +114,31 @@ descobreTriangulo(40, 40, 35);
 }
 descobreDiferenca(10, 20);
 */
+
+// Exercícios de Funções
+//1.
+/*
+const numeros = [13, 84, 67, 55, 2, 18, 3440];
+i = 0;
+
+Array.min = function(valorMinimo) {
+    return Math.min.apply(Math, valorMinimo.splice(i, 1));
+}
+
+Array.max = function(valorMaximo) {
+    return Math.max.apply(Math, valorMaximo.splice(i, 1));
+}
+
+console.log(`Esse é o segundo menor: ${Array.min(numeros)}`);
+console.log(`Esse é o segundo maior: ${Array.max(numeros)}`);
+*/
+
+//2.
+/*
+let mensagem = function (cumprimenteUsuario) {
+    return "";
+}
+
+const mostrarMensagem = mensagem(alert("Hello, Future4!"));
+*/
+

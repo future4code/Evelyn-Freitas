@@ -43,8 +43,74 @@ Infinity
 1590 
 */
 
+//Exercícios de Lógica de Programação 
+// 1. For, forEach e Map. 
 
+/*
+const racasCachorro = [
+    { raca: "Daschund", nome: "Marvin" },
+    { raca: "Spitz", nome: "Max" },
+    { raca: "Poodle", nome: "Sophia" },
+    { raca: "Pitbull", nome: "Nala" },
+    { raca: "Beagle", nome: "Stuart" }
+]
 
+racasCachorro.forEach((racas, nomes) => {
+    return racasCachorro <= 5;
+})
 
+console.log(racasCachorro);
+*/
 
+/* 
+2.
+a) false
+b) false
+c) true
+d)false
+e)true
+*/
 
+// 3. Não funciona, pois falta os valores da variável const quantidadeDeNumerosPares.
+// Não solucionado :/
+/*
+const quantidadeDeNumerosPares = [1, 0, 3, 13, 14, 25, 28, 30, 32, 33];
+let i = 3;
+while(i <= quantidadeDeNumerosPares) {
+  console.log(i * 2)
+}
+
+console.log(quantidadeDeNumerosPares);
+*/
+
+// 4.
+/*
+function descobreTriangulo(a, b, c) {
+    if(a === b && b === c) {
+        console.log("Esse triângulo é Equilátero.");
+    } else if (a === b && b !== c) {
+        console.log("Esse triângulo é Isósceles.");
+    } else {
+        console.log("Esse triângulo é Escaleno.");
+    }
+}
+
+descobreTriangulo(40, 40, 40);
+descobreTriangulo(40, 45, 33);
+descobreTriangulo(40, 40, 35);
+*/
+
+// 5. 
+// Não solucionado
+/* function descobreDiferenca() {
+ 
+    const maiorQue = a > b;
+    const seDivisiveis = a % b === 0;
+    const diferenca = a - b;
+
+    console.log(`O maior é: ${maiorQue}`);
+    console.log(`${seDivisiveis}`);
+    console.log(`${diferenca}`);
+}
+descobreDiferenca(10, 20);
+*/

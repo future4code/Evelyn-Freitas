@@ -142,3 +142,71 @@ let mensagem = function (cumprimenteUsuario) {
 const mostrarMensagem = mensagem(alert("Hello, Future4!"));
 */
 
+// Exercícios de Objetos 
+// 1. 
+/* Objetos são estruturas onde podemos guardar informações de fomar a simular o "real" e intuitiva. 
+Arrays são tipos de variáveis que guardam mais de uma informação ao mesmo tempo. 
+Ao colocá-los dentro de objetos podemos armazenar tais valores de forma mais organizada.  
+Devemos usá-los quando quisermos guardar mais de uma informação ao mesmo tempo e também de forma mais organizada, 
+facilitando a leitura do código.
+*/
+
+// 2.
+/*
+let criaRetangulo = (lado1, lado2) => {
+    const retangulo = {
+        largura: lado1,
+        altura: lado2,
+        perimetro: 2 * (lado1 + lado2),
+        área: lado1 + lado2
+    }
+    
+    return retangulo;
+}
+
+const resultado = criaRetangulo(40, 20);
+console.log(resultado);
+*/
+
+// 3.
+/*
+const filme = {
+    título: "A Voz do Silêncio",
+    ano: 2016,
+    diretor: "Naoko Yamada",
+    elenco: ["Miyu Irino", "Saori Hayami"] 
+}
+
+console.log(`Venha assistir ao filme ${filme.título}, de ${filme.ano}, dirigido por ${filme.diretor} e estrelado por ${filme.elenco}.`);
+*/
+
+// 4.
+/*
+let infoUsuario = {
+    nome: "Thaís Roque",
+    idade: 21,
+    email: "thaisroque@gmail.com",
+    endereco: "Rua do Girassol, 59"
+}
+
+const anonimizarPessoa = () => {
+    let anonimizarNome = {
+        ...infoUsuario,
+        nome: "ANÔNIMO"
+    }
+    return anonimizarNome;
+}
+
+const novaInfoUsuario = anonimizarPessoa(infoUsuario);
+console.log(novaInfoUsuario);
+*/
+
+
+
+
+
+
+
+
+
+

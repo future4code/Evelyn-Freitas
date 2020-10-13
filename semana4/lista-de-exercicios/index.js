@@ -201,6 +201,46 @@ const novaInfoUsuario = anonimizarPessoa(infoUsuario);
 console.log(novaInfoUsuario);
 */
 
+// Exercícios de Funções de array
+
+// 1.
+/*
+a.
+const infoPessoas = [
+	{ nome: "Pedro", idade: 20 },
+	{ nome: "João", idade: 10 },
+	{ nome: "Paula", idade: 12 },
+	{ nome: "Artur", idade: 89 } 
+]
+
+const somenteAdultos = infoPessoas.filter((nomes, idades) => {
+    if (nomes.idade >= 20) {
+        return nomes.idade;
+    }
+});
+
+console.log(somenteAdultos);
+*/
+
+/*
+b.
+const infoPessoas = [
+	{ nome: "Pedro", idade: 20 },
+	{ nome: "João", idade: 10 },
+	{ nome: "Paula", idade: 12 },
+	{ nome: "Artur", idade: 89 } 
+]
+
+const naoSaoAdultos = infoPessoas.filter((nomes, idades) => {
+    if (nomes.idade < 20) {
+        return nomes.idade;
+    }
+});
+
+console.log(naoSaoAdultos);
+*/
+
+// 2.
 
 
 

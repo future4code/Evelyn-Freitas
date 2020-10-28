@@ -19,7 +19,8 @@ const axiosConfig = {
 
 class UserPageList extends React.Component {
     state = {
-        userList: []
+        userList: [],
+        deleteUser: true
     };
 
     componentDidMount = () => {
@@ -52,10 +53,10 @@ class UserPageList extends React.Component {
     render() {
         const renderUserList = this.state.userList.map((user) => {
             return (
-                <div>
+                <div>    
                     <p key={user.id}>
                         {user.name}
-                        <DeleteButton onClick={() => this.deleteUser(user.id)}>
+                        <DeleteButton onClick={() => window.confirm("Você tem certeza que gostaria de excluir esse usuário?") ? this.deleteUser(user.id) : <div></div>}>
                             Excluir
                         </DeleteButton>
                     </p>

@@ -2,6 +2,26 @@ import React from 'react';
 import axios from 'axios';
 import styled from 'styled-components'; 
 
+const InputCreatePlaylist = styled.input`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15em;
+    height: 2em;
+    margin: 5px;
+    border-radius: 10px;
+    text-align: center;
+`;
+
+const ButtonCreatePlaylist = styled.button`
+    width: 10em;
+    height: 2em;
+    margin-left: 5px;
+    color: #ffff;
+    background-color: black;
+    border-radius: 10em;
+`;
+
 const baseUrl = "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists";
 const axiosConfig = 
     { headers: {
@@ -57,12 +77,12 @@ class CreateAndGetPlaylists extends React.Component {
       return (
         <div className="App">
           <div>
-            <input
-              placeholder="Playlist Name Here"
-              value={this.state.playlistValue}
-              onChange={this.onChangePlaylistValue}
-            />
-            <button onClick={this.createPlaylist}>Create Playlist</button>
+            <InputCreatePlaylist 
+                    placeholder="Playlist Name Here"
+                    value={this.state.playlistValue}
+                    onChange={this.onChangePlaylistValue}
+                    />
+            <ButtonCreatePlaylist onClick={this.createPlaylist}>Create Playlist</ButtonCreatePlaylist>
           </div>
           {renderedPlaylists}
         </div>

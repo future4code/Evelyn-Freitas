@@ -26,11 +26,11 @@ const Post = (props) => {
   };
 
   const onClickComentario = () => {
-      setCurtido(!comentando);
+      setComentando(!comentando);
   };
 
   const enviarComentario = (comentario) => {
-    const listaDeComentarios = {...comentarios, comentario}
+    const listaDeComentarios = [...comentarios, comentario]
 
     setComentarios(
       comentarios = listaDeComentarios,
@@ -49,7 +49,7 @@ const Post = (props) => {
     comentarios.map(comentario => {
       return (
         <CommentContainer>
-          <p>{comentario}</p>
+          <p key={comentario}>{comentario}</p>
         </CommentContainer>
       )
     })

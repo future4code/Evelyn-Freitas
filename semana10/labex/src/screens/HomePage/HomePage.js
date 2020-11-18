@@ -5,7 +5,7 @@ export default function HomePage() {
     const history = useHistory();
     
     const goToApplicationFormPage = () => {
-        history.push('/application-form');
+        history.push('/form');
     }
 
     const goToLoginPage = () => {

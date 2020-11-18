@@ -2,30 +2,23 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 
+
 export default function LoginPage() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const history = useHistory();
 
-    //token fica gravado e redireciona automaticamente
-    // useEffect(() => {
-    //     const token = localStorage.getItem("token");
-    //     if (token) {
-    //         history.push('/trip/details')
-    //     }
-    // }
-
-    const handleEmail = (event) => {
+    const handleNewEmail = (event) => {
         setEmail(event.target.value)
     }
 
-    const handlePassword = (event) => {
+    const handleNewPassword = (event) => {
         setPassword(event.target.value)
     }
 
-    const baseUrl = 'https://us-central1-labenu-apis.cloudfunctions.net/labeX/evelyn-dantas-dumont/login';
+    const baseUrl = 'https://us-central1-labenu-apis.cloudfunctions.net/labeX/evelyn-dantas-dumont/signup';
 
-    const login = () => {
+    const newLogin = () => {
         const body = {
             email: email,
             password: password
@@ -35,7 +28,8 @@ export default function LoginPage() {
         .post(baseUrl, body)
         .then(response => {
             localStorage.setItem('token', response.data.token);
-            history.push('/trips/details')
+            history.push('/login')
+            alert('Usuário cadastrado com sucesso!')
         })
         .catch((error) => {
             console.log(error);
@@ -44,12 +38,12 @@ export default function LoginPage() {
 
     return (
         <div>
-            <p>Login Page</p>
+            <p>Novo cadastro</p>
             <label>email: </label>
-            <input value={email} onChange={handleEmail} placeholder='email do usuário'/>
+            <input value={email} onChange={handleNewEmail} placeholder='email do usuário'/>
             <label>senha: </label>
-            <input value={password} onChange={handlePassword} placeholder='senha do usuário'/>
-            <button onClick={login}>Fazer login</button>
+            <input value={password} onChange={handleNewPassword} placeholder='senha do usuário'/>
+            <button onClick={newLogin}>Cadastrar</button>
         </div>
     );
 }

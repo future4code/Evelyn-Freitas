@@ -3,7 +3,8 @@ import axios from 'axios';
 import { useProtectedPage } from '../../hooks/useProtectedPage'
 
 export default function TripDetailsPage() {
-    const [trip, setTrip] = useState({});
+    const [trip, setTrip] = useState([]);
+    const history = useHistory();
     useProtectedPage();
 
     useEffect(() => {
@@ -13,8 +14,8 @@ export default function TripDetailsPage() {
     const getTripDetail = () => {
         axios.get('https://us-central1-labenu-apis.cloudfunctions.net/labeX/evelyn-dantas-dumont/trip/NoIFVcOiSgTKTIPVZwXS',
             {
-                header: {
-                    auth: localStorage.getItem('token')
+                headers: {
+                    Authorization: localStorage.getItem('token')
                 }
             }
         )
@@ -26,14 +27,17 @@ export default function TripDetailsPage() {
         });
     };
 
+    const goToApplicationFormPage = () => {
+        history.push('/form')
+    }
+
     return (
         <div>
             <p>Trip Details</p>
-            <p>{trip.name}</p>
-            <p>{trip.description}</p>
-            <p>{trip.durationInDays}</p>
-            <p>{trip.planet}</p>
-            <p>{trip.date}</p>
+            {trip.map((item) => {
+                return <p>{item.name}</p>
+            })}
+            <button onClick={goToApplicationFormPage}></button>
         </div>
     );
 }

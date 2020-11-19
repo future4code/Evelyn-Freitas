@@ -35,7 +35,7 @@ export default function LoginPage() {
         .post(baseUrl, body)
         .then(response => {
             localStorage.setItem('token', response.data.token);
-            history.push('/trips/details')
+            history.push('/trips/list')
         })
         .catch((error) => {
             console.log(error);
@@ -48,7 +48,7 @@ export default function LoginPage() {
             <label>email: </label>
             <input value={email} onChange={handleEmail} placeholder='email do usuário'/>
             <label>senha: </label>
-            <input value={password} onChange={handlePassword} placeholder='senha do usuário'/>
+            <input type='password' value={password} onChange={handlePassword} placeholder='senha do usuário'/>
             <button onClick={login}>Fazer login</button>
         </div>
     );

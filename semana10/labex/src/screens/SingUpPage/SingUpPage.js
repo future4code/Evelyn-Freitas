@@ -42,7 +42,7 @@ export default function LoginPage() {
             <label>email: </label>
             <input value={email} onChange={handleNewEmail} placeholder='email do usuário'/>
             <label>senha: </label>
-            <input value={password} onChange={handleNewPassword} placeholder='senha do usuário'/>
+            <input type='password' value={password} onChange={handleNewPassword} placeholder='senha do usuário'/>
             <button onClick={newLogin}>Cadastrar</button>
         </div>
     );

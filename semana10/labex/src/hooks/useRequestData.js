@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-const useRequestData(url, initialState) {
+export function useRequestData(url, initialState) {
     const [data, setData] = useState(initialState);
 
     useEffect(() => {
@@ -17,5 +17,3 @@ const useRequestData(url, initialState) {
 
     return data;
 }
-
-export default useRequestData;

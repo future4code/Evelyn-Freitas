@@ -15,6 +15,11 @@ export default function LoginPage() {
     //     }
     // }
 
+    const goToTripDetailsPage = (id) => {
+        console.log(id);
+        history.push(`'/trips/${id}'`)
+    };
+
     const baseUrl = 'https://us-central1-labenu-apis.cloudfunctions.net/labeX/evelyn-dantas-dumont/login';
 
     const loginRequest = (event) => {
@@ -29,12 +34,14 @@ export default function LoginPage() {
         .post(baseUrl, body)
         .then(response => {
             localStorage.setItem('token', response.data.token);
-            history.push('/trips/list')
+            goToTripDetailsPage();
         })
         .catch((error) => {
             console.log(error);
         })
     };
+
+    
 
     return (
         <div>

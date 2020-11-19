@@ -10,7 +10,6 @@ import ApplicationFormPage from '../screens/ApplicationFormPage/ApplicationFormP
 import CreateTripPage from '../screens/CreateTripPage/CreateTripPage';
 import ListTripsPage from '../screens/ListTripsPage/ListTripsPage';
 import TripDetailsPage from '../screens/TripDetailsPage/TripDetailsPage';
-import ErrorPage from '../components/Error/ErrorPage'
 
 const Router = () => {
     return (
@@ -41,7 +40,7 @@ const Router = () => {
                     <TripDetailsPage />
                 </Route>
                 <Router>
-                    <ErrorPage>Ops, erro 404 :/</ErrorPage>
+                    <p>Ops, erro 404 :/</p>
                 </Router>
             </Switch>
         </BrowserRouter>

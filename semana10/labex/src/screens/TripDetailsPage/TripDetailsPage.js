@@ -4,7 +4,7 @@ import axios from 'axios';
 import { useProtectedPage } from '../../hooks/useProtectedPage'
 
 export default function TripDetailsPage() {
-    const [trips, setTrip] = useState([]);
+    const [trips, setTrip] = useState({});
     const history = useHistory();
     const pathParams = useParams();
     const id = pathParams.id
@@ -25,7 +25,7 @@ export default function TripDetailsPage() {
             }
         )
         .then((response) => {
-            setTrip(response.data.trips);
+            setTrip(response.data.trip);
         })
         .catch((error) => {
             console.log(error);
@@ -36,23 +36,17 @@ export default function TripDetailsPage() {
         history.goBack();
     }
 
-    const renderTripDetails = trips.map((trip) => {
-        return (
-            <div key={trip.id}>
-                <p>Id: {trip.id}</p>
-                <p>Destino: {trip.planet}</p>
-                <p>Duração: {trip.durationInDays} dias</p>
-                <p>Data: {trip.date}</p>
-                <p>Nome: {trip.name}</p>
-                <p>Descrição: {trip.description}</p>
-                <button onClick={goBack}>Voltar</button>
-            </div>
-        )
-    });
-
     return (
         <div>
-            {renderTripDetails}
+            <div>
+                <p>Id: {trips.id}</p>
+                <p>Destino: {trips.planet}</p>
+                <p>Duração: {trips.durationInDays} dias</p>
+                <p>Data: {trips.date}</p>
+                <p>Nome: {trips.name}</p>
+                <p>Descrição: {trips.description}</p>
+                <button onClick={goBack}>Voltar</button>
+            </div>
         </div>
     );
 }

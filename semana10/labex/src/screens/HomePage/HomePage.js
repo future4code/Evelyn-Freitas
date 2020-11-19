@@ -8,8 +8,8 @@ export default function HomePage() {
         history.push('/trips/list');
     }
 
-    const goToLoginPage = () => {
-        history.push('/login');
+    const goToAdmHomePage = () => {
+        history.push('/adm');
     }
 
     const goToApplicationFormPage = () => {
@@ -18,8 +18,11 @@ export default function HomePage() {
 
     return (
         <div>
-            <p>Home Page</p>
-            <button onClick={goToLoginPage}>Login</button>
+            <div>
+                <button onClick={goToAdmHomePage}>Página Adm</button>
+            </div>
+            <p>Logo</p>
+            <p>Venha conferir nossas viagens espaciais! É coisa de outro... Planeta! :D</p>
             <button onClick={goToListTripsPage}>Viagens disponíveis</button>
             <button onClick={goToApplicationFormPage}>Formmulário de candidatura</button>
         </div>

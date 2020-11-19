@@ -12,16 +12,16 @@ export default function HomePage() {
         history.push('/login');
     }
 
-    const goToSingUpPage = () => {
-        history.push('/sing-up')
+    const goToApplicationFormPage = () => {
+        history.push('/form')
     }
 
     return (
         <div>
             <p>Home Page</p>
             <button onClick={goToLoginPage}>Login</button>
-            <button onClick={goToSingUpPage}>Cadastrar</button>
             <button onClick={goToListTripsPage}>Viagens disponíveis</button>
+            <button onClick={goToApplicationFormPage}>Formmulário de candidatura</button>
         </div>
     );
 }

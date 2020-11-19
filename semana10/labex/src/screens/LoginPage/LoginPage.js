@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
-
+import useForm from '../../hooks/useForm';
+ 
 export default function LoginPage() {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+    const [form, onChange] = useForm({ email: '', password: '' })
     const history = useHistory();
 
     //token fica gravado e redireciona automaticamente
@@ -15,21 +15,15 @@ export default function LoginPage() {
     //     }
     // }
 
-    const handleEmail = (event) => {
-        setEmail(event.target.value)
-    }
-
-    const handlePassword = (event) => {
-        setPassword(event.target.value)
-    }
-
     const baseUrl = 'https://us-central1-labenu-apis.cloudfunctions.net/labeX/evelyn-dantas-dumont/login';
 
-    const login = () => {
+    const loginRequest = (event) => {
         const body = {
-            email: email,
-            password: password
+            email: form.email,
+            password: form.password
         };
+        
+        event.preventDefault();
 
         axios
         .post(baseUrl, body)
@@ -44,12 +38,26 @@ export default function LoginPage() {
 
     return (
         <div>
+          <form onSubmit={loginRequest}>
             <p>Login Page</p>
-            <label>email: </label>
-            <input value={email} onChange={handleEmail} placeholder='email do usuário'/>
-            <label>senha: </label>
-            <input type='password' value={password} onChange={handlePassword} placeholder='senha do usuário'/>
-            <button onClick={login}>Fazer login</button>
+                <input 
+                    name={'email'} 
+                    type={'email'}
+                    value={form.email} 
+                    onChange={onChange} 
+                    placeholder='email do usuário' 
+                    required
+                    />
+                <input 
+                    name={'password'}
+                    type={'password'} 
+                    value={form.password} 
+                    onChange={onChange} 
+                    placeholder='senha do usuário' 
+                    required 
+                    />
+                <button>Fazer login</button>
+          </form>
         </div>
     );
 }

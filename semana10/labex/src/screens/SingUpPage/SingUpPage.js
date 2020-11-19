@@ -1,28 +1,22 @@
-import React, { useState } from 'react';
+import React from 'react';
 import axios from 'axios';
+import useForm from '../../hooks/useForm';
 import { useHistory } from 'react-router-dom';
 
 
 export default function LoginPage() {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+    const [form, onChange] = useForm({ email: '', password: '' })
     const history = useHistory();
-
-    const handleNewEmail = (event) => {
-        setEmail(event.target.value)
-    }
-
-    const handleNewPassword = (event) => {
-        setPassword(event.target.value)
-    }
 
     const baseUrl = 'https://us-central1-labenu-apis.cloudfunctions.net/labeX/evelyn-dantas-dumont/signup';
 
-    const newLogin = () => {
+    const newLogin = (event) => {
         const body = {
-            email: email,
-            password: password
+            email: form.email,
+            password: form.password
         };
+
+        event.presentDefautl();
 
         axios
         .post(baseUrl, body)
@@ -38,12 +32,26 @@ export default function LoginPage() {
 
     return (
         <div>
-            <p>Novo cadastro</p>
-            <label>email: </label>
-            <input value={email} onChange={handleNewEmail} placeholder='email do usuário'/>
-            <label>senha: </label>
-            <input type='password' value={password} onChange={handleNewPassword} placeholder='senha do usuário'/>
-            <button onClick={newLogin}>Cadastrar</button>
+            <form onSubmit={newLogin}>
+                <p>Novo cadastro</p>
+                <input 
+                    name={'email'}
+                    type={'email'} 
+                    value={form.email} 
+                    onChange={onChange} 
+                    placeholder='email do usuário' 
+                    required 
+                />
+                <input 
+                    name={'password'}
+                    type={'password'} 
+                    value={form.password} 
+                    onChange={onChange} 
+                    placeholder='senha do usuário' 
+                    required 
+                />
+                <button onClick={newLogin}>Cadastrar</button>
+            </form>
         </div>
     );
 }

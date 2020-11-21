@@ -1,52 +1,59 @@
-import React, { useEffect, useState } from 'react';
-import { useHistory, useParams } from 'react-router-dom';
-import axios from 'axios';
+import React, { useEffect, useState } from 'react'
+import PageTitle from '../../components/PageTitle/PageTitle'
+import TripCard from './TripCard/TripCard'
+import CandidateList from './CandidateList/CandidateList'
+import { ContentContainer } from '../../styles/styles'
+import axios from 'axios'
+import { useParams } from 'react-router-dom'
 import { useProtectedPage } from '../../hooks/useProtectedPage'
 
-export default function TripDetailsPage() {
-    const [trips, setTrip] = useState({});
-    const history = useHistory();
-    const pathParams = useParams();
-    const id = pathParams.id
-    useProtectedPage();
+const TripDetailsPage = () => {
+  const [trip, setTrip] = useState()
+  const params = useParams()
 
-    useEffect(() => {
-        getTripDetail();
-    }, []);
+  useProtectedPage()
 
-    const baseUrl = `https://us-central1-labenu-apis.cloudfunctions.net/labeX/evelyn-dantas-dumont/trip/${id}`
+  const getTripDetails = () => {
+    axios.get(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/gabarito/trip/${params.tripId}`, {
+      headers: {
+        auth: window.localStorage.getItem('token')
+      }
+    }).then((response) => {
+      setTrip(response.data.trip)
+    })
+  }
+
+  useEffect(() => {
+    getTripDetails()
+  }, [])
+
+  
+  const decideCandidate = (approve, candidateId) => {
+    const baseUrl = `https://us-central1-labenu-apis.cloudfunctions.net/labeX/gabarito/trips/${params.tripId}/candidates/${candidateId}/decide`;
     
-    const getTripDetail = () => {
-        axios.get(baseUrl,
-            {
-                headers: {
-                    auth: localStorage.getItem('token')
-                }
-            }
-        )
-        .then((response) => {
-            setTrip(response.data.trip);
-        })
-        .catch((error) => {
-            console.log(error);
-        });
-    };
-
-    const goBack = () => {
-        history.goBack();
+    const body = {
+      approve: approve
     }
 
-    return (
-        <div>
-            <div>
-                <p>Id: {trips.id}</p>
-                <p>Destino: {trips.planet}</p>
-                <p>Duração: {trips.durationInDays} dias</p>
-                <p>Data: {trips.date}</p>
-                <p>Nome: {trips.name}</p>
-                <p>Descrição: {trips.description}</p>
-                <button onClick={goBack}>Voltar</button>
-            </div>
-        </div>
-    );
+    axios.put(baseUrl, body, {
+      headers: {
+        auth: window.localStorage.getItem('token')
+      }
+    }).then(() => {
+      getTripDetails()
+    })
+  }
+
+  return <div>
+    <PageTitle title={'Detalhes da viagem'}/>
+    {trip ? <ContentContainer>
+      <TripCard info={trip}/>
+      <CandidateList 
+        candidates={trip.candidates} 
+        decideCandidate={decideCandidate}
+      />
+    </ContentContainer> : <div>Carregando...</div>}
+  </div>
 }
+
+export default TripDetailsPage;

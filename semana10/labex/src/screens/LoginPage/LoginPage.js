@@ -2,22 +2,16 @@ import React from 'react';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 import useForm from '../../hooks/useForm';
+import { LoginForm } from '../../styles/styles';
+import { TextField, Button } from '@material-ui/core'
+import PageTitle from '../../components/PageTitle/PageTitle'
  
 export default function LoginPage() {
     const [form, onChange] = useForm({ email: '', password: '' })
     const history = useHistory();
 
-    //token fica gravado e redireciona automaticamente
-    // useEffect(() => {
-    //     const token = localStorage.getItem("token");
-    //     if (token) {
-    //         history.push('/trip/details')
-    //     }
-    // }
-
-    const goToTripDetailsPage = (id) => {
-        console.log(id);
-        history.push(`'/trips/${id}'`)
+    const goToTripDetailsPage = () => {
+        history.push('/trips')
     };
 
     const baseUrl = 'https://us-central1-labenu-apis.cloudfunctions.net/labeX/evelyn-dantas-dumont/login';
@@ -33,7 +27,7 @@ export default function LoginPage() {
         axios
         .post(baseUrl, body)
         .then(response => {
-            localStorage.setItem('token', response.data.token);
+            window.localStorage.setItem('token', response.data.token)
             goToTripDetailsPage();
         })
         .catch((error) => {
@@ -41,13 +35,11 @@ export default function LoginPage() {
         })
     };
 
-    
-
     return (
         <div>
-          <form onSubmit={loginRequest}>
-            <p>Login Page</p>
-                <input 
+            <PageTitle title={'Login'}/>
+            <LoginForm onSubmit={loginRequest}>
+                <TextField 
                     name={'email'} 
                     type={'email'}
                     value={form.email} 
@@ -55,7 +47,7 @@ export default function LoginPage() {
                     placeholder='email do usuário' 
                     required
                     />
-                <input 
+                <TextField 
                     name={'password'}
                     type={'password'} 
                     value={form.password} 
@@ -63,8 +55,8 @@ export default function LoginPage() {
                     placeholder='senha do usuário' 
                     required 
                     />
-                <button>Fazer login</button>
-          </form>
+                <Button variant={'contained'} color={'primary'} type={'submit'}>Fazer login</Button>
+            </LoginForm>
         </div>
     );
 }

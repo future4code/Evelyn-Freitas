@@ -14,7 +14,8 @@ const TripDetailsPage = () => {
   useProtectedPage()
 
   const getTripDetails = () => {
-    axios.get(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/gabarito/trip/${params.tripId}`, {
+    const baseUrlTripDetails = `https://us-central1-labenu-apis.cloudfunctions.net/labeX/evelyn-dantas-dumont/trip/${params.tripId}`;  
+    axios.get(baseUrlTripDetails, {
       headers: {
         auth: window.localStorage.getItem('token')
       }
@@ -29,13 +30,13 @@ const TripDetailsPage = () => {
 
   
   const decideCandidate = (approve, candidateId) => {
-    const baseUrl = `https://us-central1-labenu-apis.cloudfunctions.net/labeX/gabarito/trips/${params.tripId}/candidates/${candidateId}/decide`;
+    const baseUrlDecideCandidate = `https://us-central1-labenu-apis.cloudfunctions.net/labeX/evelyn-dantas-dumont/trips/${params.tripId}/candidates/${candidateId}/decide`;
     
     const body = {
       approve: approve
     }
 
-    axios.put(baseUrl, body, {
+    axios.put(baseUrlDecideCandidate, body, {
       headers: {
         auth: window.localStorage.getItem('token')
       }

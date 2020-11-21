@@ -19,6 +19,17 @@ export const ContentContainer = styled.div`
   gap: 32px;
 `;
 
+export const TripsListPageContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+export const LoginForm = styled.form`
+  display: grid;
+  gap: 16px;
+`;
+
 export const Catchphrase = styled.h2 `
     display: flex;
     justify-content: center;

@@ -17,9 +17,6 @@ export default function HomePage() {
                 <Link to={'/form'}>
                     <Button variant={'contained'} color={'primary'}>Quero me candidatar!</Button>
                 </Link>
-                <Link to={'/trips/list'}>
-                    <Button variant={'contained'} color={'primary'}>Nossas viagens</Button>
-                </Link>
             </ButtonsContainer>
         </div>
     );

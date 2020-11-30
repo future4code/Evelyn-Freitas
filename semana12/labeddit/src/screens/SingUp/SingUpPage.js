@@ -3,7 +3,12 @@ import React from 'react';
 export default function SingUpPage() {
     return (
         <div>
-            Sing Up Page
+            <form>
+                <input placeholder='Username' />
+                <input placeholder='Email' />
+                <input placeholder='Senha' />
+                <button>Cadastrar</button>
+            </form>
         </div>
     );
 }

@@ -13,17 +13,19 @@ export const login = (body, history) => {
         .catch(error => {
             alert("Email ou senha inválidos!")
             console.log(error.message)
-        })
+        });
 }
 
-export const singup = (body, history) => {
+
+export const signup = (body, history) => {
+
     axios
-        .post(`${baseUrl}/user/singup`, body)
+        .post(`${baseUrl}/user/signup`, body)
         .then(response => {
-            localStorage.setItem('token', response.date.token)
-            goToFeed(history);
+            localStorage.setItem("token", response.data.token)
+            goToFeed(history)
         })
         .catch(error => {
             console.log(error.message)
-        })
+        });
 }

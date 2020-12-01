@@ -1,7 +1,16 @@
 import React from 'react';
-import useForm from '../../hooks/useForm';
+import { useForm } from "../../hooks/useForm"
+import { FormContainer, SignupPageContainer } from './styles';
+import { useHistory } from 'react-router-dom';
+import { signup } from '../../services/user';
+
+import { useUnprotectedPage } from '../../hooks/useUnprotectedPage';
+
+import { TextField, Button } from '@material-ui/core'
 
 export default function SingUpPage() {
+    useUnprotectedPage()
+    const history = useHistory()
     const { form, onChange } = useForm({ username: '', email: '', password: '' });
 
     const handleInputChange = (event) => {
@@ -11,28 +20,46 @@ export default function SingUpPage() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        signup(form, history);
     }
 
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
-                <input
-                    name='username'
+        <SignupPageContainer>
+            <FormContainer onSubmit={handleSubmit} >
+                <TextField
+                    label="Nome de usuário"
+                    variant="outlined"
+                    name="username"
                     value={form.username}
                     onChange={handleInputChange}
+                    required
                 />
-                <input
-                    name='email'
+                <TextField
+                    label="E-mail"
+                    variant="outlined"
+                    type="email"
+                    name="email"
                     value={form.email}
                     onChange={handleInputChange}
+                    required
                 />
-                <input
-                    name='password'
+                <TextField
+                    label="Senha"
+                    variant="outlined"
+                    type="password"
+                    name="password"
                     value={form.password}
                     onChange={handleInputChange}
+                    required
                 />
-                <button>Cadastrar</button>
-            </form>
-        </div>
+                <Button
+                    variant="contained"
+                    color="primary"
+                    type="submit"
+                >
+                    Cadastrar
+                </Button>
+            </FormContainer>
+        </SignupPageContainer>
     );
 }

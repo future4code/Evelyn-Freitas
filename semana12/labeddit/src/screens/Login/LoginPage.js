@@ -1,7 +1,7 @@
 import React from 'react';
 import { login } from '../../services/user';
 import { useHistory } from 'react-router-dom';
-import useForm from '../../hooks/useForm';
+import { useForm } from '../../hooks/useForm';
 import { useUnprotectedPage } from '../../hooks/useUnprotectedPage';
 import { FormContainer, LoginPageContainer } from './styles';
 
@@ -32,6 +32,7 @@ export default function LoginPage() {
                     name="email"
                     value={form.email}
                     onChange={handleInputChange}
+                    required
                 />
                 <TextField
                     label="Senha"
@@ -40,6 +41,7 @@ export default function LoginPage() {
                     name="password"
                     value={form.password}
                     onChange={handleInputChange}
+                    required
                 />
                 <Button
                     variant="contained"

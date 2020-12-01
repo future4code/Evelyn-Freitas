@@ -1,7 +1,6 @@
 import React from 'react'
-import Router from './routes/Router';
+import Router from './router/Router';
 import { BrowserRouter } from 'react-router-dom'
-import './App.css'
 import styled from 'styled-components'
 
 import { ThemeProvider } from '@material-ui/core/styles'
@@ -12,7 +11,6 @@ import AppNavBar from './components/AppNavBar/AppNavBar';
 const Container = styled.div`
   padding-top: 64px;
 `
-
 const App = () => {
   return (
     <ThemeProvider theme={theme}>

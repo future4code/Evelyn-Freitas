@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { goToFeed } from '../router/coordinator';
 
-export const useProtectedPage = () => {
+export const useUnprotectedPage = () => {
     const history = useHistory();
 
     useEffect(() => {

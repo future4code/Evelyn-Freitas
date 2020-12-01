@@ -1,13 +1,29 @@
-import React from 'react';
-import Router from './router/Router';
+import React from 'react'
+import Router from './routes/Router';
 import { BrowserRouter } from 'react-router-dom'
+import './App.css'
+import styled from 'styled-components'
 
-export default function App() {
+import { ThemeProvider } from '@material-ui/core/styles'
+
+import theme from './constants/theme';
+import AppNavBar from './components/AppNavBar/AppNavBar';
+
+const Container = styled.div`
+  padding-top: 64px;
+`
+
+const App = () => {
   return (
-    <div>
+    <ThemeProvider theme={theme}>
       <BrowserRouter>
-        <Router />
+        <AppNavBar />
+        <Container>
+          <Router />
+        </Container>
       </BrowserRouter>
-    </div>
+    </ThemeProvider>
   );
 }
+
+export default App;

@@ -1,24 +1,24 @@
 import axios from 'axios';
-import { goToFeed } from '../../router/coordinator';
+import { goToFeed } from '../router/coordinator';
 
 const baseUrl = 'https://us-central1-labenu-apis.cloudfunctions.net';
 
-
-const login = (body, history) => {
+export const login = (body, history) => {
     axios
-        .post(`${baseUrl}` / user / login, body)
+        .post(`${baseUrl}/user/login`, body)
         .then(response => {
             localStorage.setItem('token', response.date.token)
             goToFeed(history);
         })
         .catch(error => {
+            alert("Email ou senha inválidos!")
             console.log(error.message)
         })
 }
 
-export default function singup(body, history) {
+export const singup = (body, history) => {
     axios
-        .post(`${baseUrl}` / user / singup, body)
+        .post(`${baseUrl}/user/singup`, body)
         .then(response => {
             localStorage.setItem('token', response.date.token)
             goToFeed(history);

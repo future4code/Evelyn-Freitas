@@ -1,9 +1,10 @@
 import React from 'react';
+import { ButtonContainer } from './styles';
 
 const NavBar = () => {
     return (
         <div>
-            Nav Bar
+            <ButtonContainer />
         </div>
     );
 }

@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { goToFeed } from '../router/coordinator';
+import { setPost, setComments, id } from '../screens/Posts/PostPage';
 
 const baseUrl = 'https://us-central1-labenu-apis.cloudfunctions.net';
 

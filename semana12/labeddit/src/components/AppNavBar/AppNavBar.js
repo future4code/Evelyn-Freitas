@@ -16,7 +16,7 @@ const AppNavBar = () => {
             <Toolbar>
                 <ButtonsContainer>
                     <Button color='inherit' onClick={() => goToFeed(history)}>LabEddit</Button>
-                    <Button color='inherit' onClick={() => goToLogin(history)}>Logout</Button>
+                    <Button color='inherit' onClick={() => goToLogin(history)}>Login</Button>
                     <Button color='inherit' onClick={() => goToSignUp(history)}>Cadastrar</Button>
                 </ButtonsContainer>
             </Toolbar>

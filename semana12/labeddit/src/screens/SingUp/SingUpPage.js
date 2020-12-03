@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useForm } from "../../hooks/useForm"
 import { FormContainer, SignupPageContainer } from './styles';
 import { useHistory } from 'react-router-dom';
@@ -7,10 +7,12 @@ import { signup } from '../../services/user';
 import { useUnprotectedPage } from '../../hooks/useUnprotectedPage';
 
 import { TextField, Button } from '@material-ui/core'
+import LoggedContext from '../../context/LoggedContext';
 
 export default function SingUpPage() {
     useUnprotectedPage()
     const history = useHistory()
+    const loggedContext = useContext(LoggedContext);
     const { form, onChange } = useForm({ username: '', email: '', password: '' });
 
     const handleInputChange = (event) => {
@@ -20,7 +22,7 @@ export default function SingUpPage() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        signup(form, history);
+        signup(form, history, loggedContext.setLogged);
     }
 
     return (

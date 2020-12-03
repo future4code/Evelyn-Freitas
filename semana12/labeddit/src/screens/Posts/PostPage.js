@@ -12,6 +12,7 @@ export default function PostPage() {
     const [post, setPost] = useState({});
     const [comments, setComments] = useState([]);
     const { form, onChange } = useForm({ text: '' });
+    const pathParams = useParams();
     const id = pathParams.id;
 
     useEffect(() => {

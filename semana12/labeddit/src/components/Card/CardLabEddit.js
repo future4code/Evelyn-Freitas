@@ -1,12 +1,31 @@
-import styled from 'styled-components';
+// import React, { useContext } from "react"
+// import CardActionArea from '@material-ui/core/CardActionArea';
+// import CardContent from '@material-ui/core/CardContent';
+// import CardMedia from '@material-ui/core/CardMedia';
+// import Typography from '@material-ui/core/Typography';
+// import { CardMediaStyled, CardStyled } from "./styles";
+// import { goToPosts } from "../../routes/coordinator";
+// import { useHistory } from "react-router-dom";
 
-export const PostCard = styled.section`
-    border: 0.5px solid #ededed;
-    border-radius: 5px;
-    height: 250px;
-    width: 700px;
-    margin-top: 32px;
-    background-color: #ffffff;
-    box-shadow: 1px 2px 6px #adabab;
-    padding: 24px;
-`;
+
+// const CardLabEddit = (props) => {
+//     const history = useHistory()
+
+//     return (
+//         <CardStyled onClick={() => goToPosts(history, props.id)}>
+//             <CardActionArea>
+//                 <CardMediaStyled
+//                     image={props.imagem}
+//                     title={props.titulo}
+//                 />
+//                 <CardContent>
+//                     <Typography gutterBottom align="center" color="primary">
+//                         {props.titulo}
+//                     </Typography>
+//                 </CardContent>
+//             </CardActionArea>
+//         </CardStyled>
+//     );
+// }
+
+// export default CardLabEddit;

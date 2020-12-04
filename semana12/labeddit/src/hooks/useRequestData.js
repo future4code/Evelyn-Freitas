@@ -2,13 +2,14 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { goToErrorPage } from '../router/coordinator'
 
-export default function useRequestData(baseUrl) {
-    const [data, setData] = useState();
+
+export function useRequestData(url, initialState) {
+    const [data, setData] = useState(initialState);
 
     useEffect(() => {
         const token = localStorage.getItem("token");
         axios
-            .get(baseUrl, {
+            .get(url, {
                 headers: {
                     Authorization: token,
                 },
@@ -17,9 +18,9 @@ export default function useRequestData(baseUrl) {
                 setData(response.data)
             })
             .catch((error) => {
-                goToErrorPage();
+                console.log(error);
             });
-    }, [baseUrl]);
+    }, [url]);
 
     return data;
 }

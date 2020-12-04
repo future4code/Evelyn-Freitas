@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { useForm } from "../../hooks/useForm"
 import { FormContainer, SignupPageContainer } from './styles';
 import { useHistory } from 'react-router-dom';
@@ -7,12 +7,11 @@ import { signup } from '../../services/user';
 import { useUnprotectedPage } from '../../hooks/useUnprotectedPage';
 
 import { TextField, Button } from '@material-ui/core'
-import LoggedContext from '../../context/LoggedContext';
+import { goToSignUp, goToLogin } from '../../router/coordinator';
 
 export default function SingUpPage() {
     useUnprotectedPage()
     const history = useHistory()
-    const loggedContext = useContext(LoggedContext);
     const { form, onChange } = useForm({ username: '', email: '', password: '' });
 
     const handleInputChange = (event) => {
@@ -22,7 +21,7 @@ export default function SingUpPage() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        signup(form, history, loggedContext.setLogged);
+        signup(form, history);
     }
 
     return (
@@ -58,6 +57,7 @@ export default function SingUpPage() {
                     variant="contained"
                     color="primary"
                     type="submit"
+                    onClick={() => goToLogin(history)}
                 >
                     Cadastrar
                 </Button>

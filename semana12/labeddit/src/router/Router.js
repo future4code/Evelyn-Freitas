@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route, BrowserRouter } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 
 import LoginPage from '../screens/Login/LoginPage'
 import SignUpPage from '../screens/SingUp/SingUpPage'
@@ -9,25 +9,23 @@ import ErrorPage from '../screens/Error/ErrorPage'
 
 const Router = () => {
     return (
-        <BrowserRouter>
-            <Switch>
-                <Route exact path={'/login'}>
-                    <LoginPage />
-                </Route>
-                <Route exact path={'/cadastro'}>
-                    <SignUpPage />
-                </Route>
-                <Route exact path={['/feed', '/']}>
-                    <FeedPage />
-                </Route>
-                <Route exact path={'/posts/:id'}>
-                    <PostPage />
-                </Route>
-                <Route>
-                    <ErrorPage />
-                </Route>
-            </Switch>
-        </BrowserRouter>
+        <Switch>
+            <Route exact path={'/login'}>
+                <LoginPage />
+            </Route>
+            <Route exact path={'/cadastro'}>
+                <SignUpPage />
+            </Route>
+            <Route exact path={['/feed', '/']}>
+                <FeedPage />
+            </Route>
+            <Route exact path={'/posts/:id'}>
+                <PostPage />
+            </Route>
+            <Route>
+                <ErrorPage />
+            </Route>
+        </Switch>
     )
 }
 

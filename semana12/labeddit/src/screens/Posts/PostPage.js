@@ -4,7 +4,7 @@ import { useProtectedPage } from '../../hooks/useProtectedPage';
 import { useForm } from '../../hooks/useForm'
 import { useParams } from 'react-router-dom';
 import { baseUrl } from '../../services/user';
-import CardLabEddit from '../../components/Card/CardLabEddit'
+import PostCard from '../../components/PostCard/PostCard'
 
 export default function PostPage() {
     useProtectedPage();
@@ -25,7 +25,7 @@ export default function PostPage() {
     }
 
     const postDetails = () => {
-        axios.get(`${baseUrl}/labEddit/posts/${id}`, {
+        axios.get(`${baseUrl}/posts/${id}`, {
             headers: {
                 Authorization: localStorage.getItem("token")
             }
@@ -45,7 +45,7 @@ export default function PostPage() {
             text: form.text
         }
 
-        axios.post(`${baseUrl}/labEddit/posts/${id}/comment`, body, {
+        axios.post(`${baseUrl}/posts/${id}/comment`, body, {
             headers: {
                 Authorization: localStorage.getItem("token")
             }
@@ -61,7 +61,7 @@ export default function PostPage() {
 
     return (
 
-        <CardLabEddit>
+        <PostCard>
             <p>{post.username}</p>
             <p>{post.title}</p>
             <p>{post.text}</p>
@@ -93,7 +93,7 @@ export default function PostPage() {
             </div>
 
 
-        </CardLabEddit>
+        </PostCard>
 
     );
 }

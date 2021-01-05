@@ -1,0 +1,18 @@
+{
+  "name": "exercicio-node",
+  "version": "1.0.0",
+  "description": "Exerício node e package.json",
+  "main": "index.js",
+  "scripts": {
+    "start": "clear && echo \"Iniciando aplicação... \" && node ./index.js",
+    "test": "echo \"Error: no test specified\" ",
+    "show-user-info": "clear && node ./src/exercicio1/showUserInfo.js"
+  },
+  "keywords": [
+    "backend",
+    "node",
+    "package.json"
+  ],
+  "author": "evelyn-dantas",
+  "license": "ISC"
+}

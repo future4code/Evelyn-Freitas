@@ -6,7 +6,7 @@
   "scripts": {
     "start": "clear && echo \"Iniciando aplicação... \" && node ./index.js",
     "test": "echo \"Error: no test specified\" ",
-    "show-user-info": "clear && node ./showUserInfo.js"
+    "show-user-info": "clear && node ./src/exercicio1/showUserInfo.js"
   },
   "keywords": [
     "backend",

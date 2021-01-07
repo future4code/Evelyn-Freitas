@@ -1,13 +1,14 @@
-//importando express com Request e Response e cors
+// Resolução do Exercício 1:
+// a. Método GET, pois iremos fazer uma requisição de busca pelos usuários.
+// b. Dando a chamando por um nome adequado na requisição:  
+
 import express, {Request, Response} from 'express';
 import cors from 'cors';
 
-//extra: importando configuração de rede do node
 import { AddressInfo } from "net";
-//iniciando a aplicação web com express
+
 const app = express();
 
-//ativando os módulos de Bodyparser e cors
 app.use(express.json());
 app.use(cors());
 
@@ -18,7 +19,6 @@ type user = {
     type: string,
     age: number
 }
-
 
 let users: user[] = [
     {
@@ -65,8 +65,34 @@ let users: user[] = [
     }
 ]
 
+app.get("/user", (req: Request, res: Response) => {
+    let errorCode: number = 400;
+    try {
+        const userType: string = req.query.type as string;
 
+        if (!userType) {
+            errorCode = 422;
+            throw new Error("Tipo de usuário inválido. Por favor preencha corretamente.");
+        }
 
+        const myUserType = users.find(((u: user) => u.type.toLowerCase() === u.type.toLowerCase()));
+        if (!myUserType) {
+            errorCode = 404;
+            throw new Error("Usuário não encontrado");
+        }
+
+        const result = myUserType;
+            res
+                .status(200)
+                .send(result);
+
+    } catch (error) {
+            res
+                .status(errorCode)
+                .send(error.message);
+    }
+
+});
 
 const server = app.listen(process.env.PORT || 3003, () => {
     if (server) {

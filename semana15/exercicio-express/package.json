@@ -2,9 +2,9 @@
    "name": "express-api-template",
    "version": "1.0.0",
    "description": "",
-   "main": "index.js",
+   "main": "endpoint1.js",
    "scripts": {
-      "start": "tsc && node build/index.js",
+      "endpoint1": "tsc && node build/endpoint1.js",
       "test": "echo \"Error: no test specified\" && exit 1"
    },
    "keywords": [],

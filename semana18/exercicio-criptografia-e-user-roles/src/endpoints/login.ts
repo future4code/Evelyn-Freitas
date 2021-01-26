@@ -1,6 +1,8 @@
 import { Request, Response } from "express";
 import { getUserByEmail } from "../data/getUserByEmail";
 import { generateToken } from "../service/authenticator";
+import { compare } from "../service/hashGenerator";
+
 
 export async function login(req: Request, res: Response) {
 
@@ -21,7 +23,12 @@ export async function login(req: Request, res: Response) {
             throw new Error("User not found!");
         }
 
-        if(user.password !== input.password){
+        const passwordIsCorrect: boolean = compare (
+            input.password,
+            user.password
+        )
+
+        if(!passwordIsCorrect){
             throw new Error("Incorrect Password.");
         }
 

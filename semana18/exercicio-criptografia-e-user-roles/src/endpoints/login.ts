@@ -3,7 +3,6 @@ import { getUserByEmail } from "../data/getUserByEmail";
 import { generateToken } from "../service/authenticator";
 import { compare } from "../service/hashGenerator";
 
-
 export async function login(req: Request, res: Response) {
 
     try {
@@ -32,11 +31,14 @@ export async function login(req: Request, res: Response) {
             throw new Error("Incorrect Password.");
         }
 
-        const token = generateToken(user.id);
-        res.status(200).send({token});
+        const token = generateToken({
+            id: user.id,
+            role: user.role
+        });
+        res.status(200).send({ token });
         
     } catch (error) {
-        res.status(400).send({message: error.message});
+        res.status(400).send({ message: error.message });
     }
 
 

@@ -5,3 +5,9 @@ a) Salt é uma string de texto aleatória que é adicionada ao algoritmo antes d
 ### Exercício 2 
 
 a) Temos de modificar o cadastro antes o login para que possamos criptografar a senha antes de salvá-la no banco de dados.
+
+d) Devemos modificar o tipo de usuário adicionando user roles para que possamos diferenciá-los e para que cada um tenha permissões diferentes.
+
+
+### Exercício 4
+

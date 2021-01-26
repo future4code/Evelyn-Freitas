@@ -1,12 +1,26 @@
 import { Request, Response } from "express";
 import updateUser from "../data/updateUser";
 import { AuthenticationData, getTokenData } from "../service/authenticator";
+import { USER_ROLES } from "../types/user";
+
 
 export default async function editUser(
    req: Request,
    res: Response
 ) {
    try {
+
+      const { authorization } = req.headers;
+
+      const tokenData: AuthenticationData = getTokenData(authorization!);
+
+      debugger
+
+      if (tokenData.role !== USER_ROLES.ADMIN) {
+         res.statusCode = 401
+         throw new Error("You do not have the necessary authorization to access.");
+      }
+
       if (
          req.body.name === '' ||
          req.body.nickname === '' ||
@@ -26,7 +40,7 @@ export default async function editUser(
       }
 
       await updateUser(
-         verifiedToken.id,
+         tokenData.id,
          req.body.name,
          req.body.nickname,
          req.body.email

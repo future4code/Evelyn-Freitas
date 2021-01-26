@@ -2,6 +2,8 @@ import { Request, Response } from "express";
 import insertUser from "../data/insertUser";
 import { generate } from "../service/idGenerator";
 import { generateToken } from "../service/authenticator";
+import { generateHash} from "../service/hashGenerator";
+import { USER_ROLES } from "../types/user";
 
 export default async function createUser(
     req: Request,
@@ -12,22 +14,38 @@ export default async function createUser(
         if (
             !req.body.name ||
             !req.body.nickname ||
-            !req.body.email
+            !req.body.email ||
+            !req.body.password ||
+            !req.body.role
         ) {
-          throw new Error('Preencha os campos "name","nickname" e "email"')
+          throw new Error('Preencha os campos "name","nickname", "email", "password" e "role"')
+        }
+
+        if (
+            req.body.role !== USER_ROLES.ADMIN &&
+            req.body.role !== USER_ROLES.NORMAL
+        ) {
+            throw new Error(`"role" deve ser "NORMAL" ou "ADMIN"`);
+            
         }
 
         const id: string = generate();
 
-        await insertUser(
+        const cypherPassword: string = generateHash(req.body.password);
+
+        insertUser(
             id,
             req.body.name,
             req.body.nickname,
-            req.body.password,
-            req.body.email
+            cypherPassword,
+            req.body.email,
+            req.body.role
         );
 
-        const token = generateToken(id);
+        const token = generateToken({
+            id,
+            role: req.body.role
+        });
 
         res
             .status(200)
